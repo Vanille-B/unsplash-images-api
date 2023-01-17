@@ -1,0 +1,218 @@
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'sf pro', sans-serif;
+    margin: 0;
+    overflow: hidden;
+    color: #0d0c22;
+    background: #f5f5f5;
+}
+
+h1, p {
+    margin: 0;
+    color: #0d0c22;
+}
+
+a{
+    text-decoration: none;
+    color: #0d0c22;
+}
+
+$grey: rgba(150, 150, 150, 0.05); 
+
+.icon{
+    i{
+        transform: rotate(-45deg);
+    }
+
+}
+
+
+.d-flex{
+    display: flex;
+}
+
+
+
+@function tint($color, $percentage) {
+    @return mix(black, $color, $percentage);
+}
+  
+
+.hero-section{
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+
+    .hero-section-title{
+        width: 100%;
+        min-height: 10vh;
+        padding: 20px 30px 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #f5f5f5;
+    }
+
+    .hero-section-img {
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 65vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .link-url-api{
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 10px 20px;
+        background: rgba(13,12,34,0.05);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background 0.5s;
+
+        &:hover{
+            background: tint($grey, 5%);
+
+        }
+        
+        .icon{
+            i{
+                margin-left: 10px;
+            }
+        }
+    }
+}
+
+.img-fill {
+    object-fit: fill;
+}
+
+#unsplash-creator-name-copyright-url {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    height: 10%;
+    width: auto;
+
+    // bottom: 0;
+    // right: 0;
+    // width: -webkit-fill-available;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #c7c7c7;
+    background: rgba(255, 255, 255, 0.8);
+
+    box-shadow: outset 0 8px 32px 0 rgb(36 37 51 / 37%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    opacity: 0;
+
+    .img-fill {
+        display: flex;
+        align-self: center;
+    }
+
+    #unsplash-creator-name-profil-image {
+        border-radius: 50px;
+        margin-right: 20px;
+    }
+
+    #unsplash-id-creator-name {
+        // color: #363636;
+        // color: #d7d7d7;
+        font-size: 12px;
+    }
+
+    .icon {
+        align-self: center;
+        margin-left: 30px;
+        padding: 6px 9px;
+        border-radius: 10px;
+        // background: rgba(54, 54, 54, 0.5);
+        // background: rgb(255 255 255 / 15%);
+        background: rgba(13,12,34,0.05);
+
+        i {
+            font-size: 17px;
+            // color: #fff;
+            color: #504f60;
+
+        }
+    }
+}
+
+/* MOBILE > 767px */
+@media screen and (min-width: 767px) {
+
+    .hero-section{
+        flex-direction: row;
+        
+    
+        .hero-section-title{
+            padding: 0;
+            width: 40%;
+            min-height: unset;
+        }
+       
+        .hero-section-img {
+            width: 60%;
+            height: 100vh;
+        }
+
+        .link-url-api{
+            margin: 15px 0;
+        }
+    }
+
+    #unsplash-creator-name-copyright-url {
+        justify-content: unset;
+        top: auto;
+        bottom: 30px;
+        right: 40px;
+        font-size: 18px;
+        border-radius: 10px;
+        background: rgba(255,255,255,.8);
+        box-shadow: inset -2px 20px 32px 2px rgb(36 37 51 / 37%);
+        transform: translateY(0);
+        transition: all 0.5s;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgb(36 37 51 / 37%);
+            transform: translateY(-20%);
+            transition: all 0.5s;
+            color: #262626;
+                .icon {
+                    color: #d7d7d7;
+                    background: rgb(57 57 57 / 10%);
+                    margin-left: 30px;
+
+            
+                    i {
+                        transform: rotate(-45deg);
+                        color: #262626;
+                    }
+                }
+            }
+            .unsplash-id-creator-name{
+                font-size: 15px;
+            }
+        }
+
+ }
